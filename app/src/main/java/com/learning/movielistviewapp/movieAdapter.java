@@ -38,7 +38,7 @@ public class movieAdapter extends BaseAdapter {
         ViewHolder holder;
         if(convertView == null){
             convertView = LayoutInflater.from(context)
-                    .inflate(R.layout.list_item, viewGroup);
+                    .inflate(R.layout.list_item, viewGroup, false);
             holder = new ViewHolder();
             holder.title = convertView.findViewById(R.id.title);
             holder.genre = convertView.findViewById(R.id.genre);
@@ -50,7 +50,7 @@ public class movieAdapter extends BaseAdapter {
         movie Movie = movieList.get(i);
         holder.title.setText(Movie.gettitle()); //sets the title to the title of the movie object
         holder.genre.setText(Movie.getgenre()); // "
-        holder.releaseYear.setText(Movie.getreleaseYear()); // "
+        holder.releaseYear.setText(String.valueOf(Movie.getreleaseYear())); // "
         return convertView;
     }
 
